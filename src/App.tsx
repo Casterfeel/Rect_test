@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CanvasComponent from './CanvasComponent';
 
-function App() {
+const App: React.FC = () => {
+  const rectSize = { width: 50, height: 50 };
+
+  const rect1 = {
+    position: { x: 200, y: 200 },
+    size: rectSize,
+  };
+
+  const rect2 = {
+    position: { x: 500, y: 300 },
+    size: rectSize,
+  };
+
+  const cPoint1 = {
+    point: { x: 200, y: 175 }, 
+  };
+
+  const cPoint2 = {
+    point: { x: 475, y: 300 }, 
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CanvasComponent rect1={rect1} rect2={rect2} cPoint1={cPoint1} cPoint2={cPoint2} />
     </div>
   );
-}
+};
 
 export default App;
